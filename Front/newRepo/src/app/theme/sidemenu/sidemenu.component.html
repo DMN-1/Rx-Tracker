@@ -1,0 +1,50 @@
+<ul navAccordion class="matero-sidemenu level-0">
+  <li navAccordionLink class="matero-sidemenu-item" routerLinkActive="active"
+      *ngFor="let menuItem of menus | async"
+      [group]="menuItem.route">
+    <a class="matero-sidemenu-link" [routerLink]="buildRoute([menuItem.route])"
+       *ngIf="menuItem.type === 'link'"
+       matRipple [matRippleDisabled]="!ripple">
+      <mat-icon class="menu-icon">{{menuItem.icon}}</mat-icon>
+      <span class="menu-name">{{menuItem.name | translate}}</span>
+      <span class="menu-label bg-{{menuItem.label.color}}" *ngIf="menuItem.label">
+        {{menuItem.label.value}}
+      </span>
+      <span fxFlex></span>
+      <span class="menu-badge bg-{{menuItem.badge.color}}" *ngIf="menuItem.badge">
+        {{menuItem.badge.value}}
+      </span>
+    </a>
+    <a class="matero-sidemenu-link" [href]="menuItem.route" *ngIf="menuItem.type === 'extLink'"
+       matRipple [matRippleDisabled]="!ripple">
+      <mat-icon class="menu-icon">{{menuItem.icon}}</mat-icon>
+      <span class="menu-name">{{menuItem.name | translate}}</span>
+      <span class="menu-label bg-{{menuItem.label.color}}" *ngIf="menuItem.label">
+        {{menuItem.label.value}}
+      </span>
+      <span fxFlex></span>
+      <span class="menu-badge bg-{{menuItem.badge.color}}" *ngIf="menuItem.badge">
+        {{menuItem.badge.value}}
+      </span>
+      <mat-icon class="menu-caret">launch</mat-icon>
+    </a>
+    <a class="matero-sidemenu-link" [href]="menuItem.route" target="_blank"
+       *ngIf="menuItem.type === 'extTabLink'"
+       matRipple [matRippleDisabled]="!ripple">
+      <mat-icon class="menu-icon">{{menuItem.icon}}</mat-icon>
+      <span class="menu-name">Reports
+        
+      </span>
+      <span class="menu-label bg-{{menuItem.label.color}}" *ngIf="menuItem.label">
+        {{menuItem.label.value}}
+      </span>
+      <span fxFlex></span>
+      <span class="menu-badge bg-{{menuItem.badge.color}}" *ngIf="menuItem.badge">
+        {{menuItem.badge.value}}
+      </span>
+      
+    </a>
+
+    
+  </li>
+</ul>

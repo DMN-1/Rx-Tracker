@@ -1,0 +1,47 @@
+<mat-toolbar class="matero-toolbar">
+   
+ 
+    <i class="material-icons">track_changes</i>
+  
+    <h1> RXTracker</h1>
+    <span fxFlex></span>
+  
+    <button
+      mat-button
+      class="matero-toolbar-button matero-avatar-button"
+      href="javascript:void(0)"
+      [matMenuTriggerFor]="menu"
+    >
+    <i class="material-icons">group_add</i>
+      <span class="matero-username" fxHide.lt-sm>Join</span>
+    </button>
+
+    
+
+    <button
+      mat-button
+      class="matero-toolbar-button matero-avatar-button"
+      href="javascript:void(0)"
+      [matMenuTriggerFor]="menu"
+    >
+    <i class="material-icons">info</i>
+      <span class="matero-username" fxHide.lt-sm>About Us</span>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button routerLink="/profile/overview" mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        <span>{{ 'Signin' | translate }}</span>
+      </button>
+      <button routerLink="/profile/settings" mat-menu-item>
+        <mat-icon>register</mat-icon>
+        <span>{{ 'Register' | translate }}</span>
+      </button>
+     
+    </mat-menu>
+
+
+
+  
+
+  </mat-toolbar>
